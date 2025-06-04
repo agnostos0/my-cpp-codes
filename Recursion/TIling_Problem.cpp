@@ -15,3 +15,4 @@ int tp(int n){
 int main(){
     cout<<tp(10)<<endl;
 }
+//also ans for n = fibonaci(n+1)
