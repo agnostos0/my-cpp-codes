@@ -36,3 +36,6 @@ return i;
         printarr(arr,n);
         return 0;
     }
+    //genrally time complexity 0(nlogn)
+    //space complexity 0(logn)
+    //worst case time complexity 0(n^2) when array is already sorted like pivot is the smallest element or the largest element than it will be worst
