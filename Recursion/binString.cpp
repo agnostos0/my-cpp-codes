@@ -6,7 +6,7 @@ void bin(int n,string ans){
         cout<<ans<<endl;
     return;
 }
-if(ans[ans.size() - 1] == '0'){
+if(ans[ans.size() - 1] != '1'){
 bin(n-1,ans + "0");
 bin(n-1,ans+"1");
 }
@@ -17,7 +17,7 @@ else{
 }
 int main()
 {string ans = "";
-   bin(5,ans); 
+   bin(3,ans); 
    return 0;
-   
+
 }
