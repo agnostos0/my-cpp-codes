@@ -47,3 +47,4 @@ int main(){
 printarr(arr,n-1);
 return 0;
 }
+//day 21
