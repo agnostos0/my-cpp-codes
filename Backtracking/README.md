@@ -18,7 +18,7 @@ This process continues until a valid solution is found or all possibilities are 
 
 ---
 
-> “Backtracking doesn’t just solve a problem — it **explores and eliminates** possibilities like a detective.” 🕵️
+> “Backtracking doesn’t just solve a problem — it **explores and eliminates** possibilities like a detective.” 🕵
 
 ---
 
