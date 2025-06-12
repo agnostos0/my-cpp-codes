@@ -42,7 +42,6 @@ void nqueens(vector<vector<char>> board,int row){
       cout<<endl;
 return;
     }
-    
         for(int j = 0;j<n;j++){
         if(issafe(board,row,j)){
       board[row][j] = 'Q';
