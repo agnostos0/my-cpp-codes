@@ -23,7 +23,7 @@ class LinkedList{
      public:
      LinkedList(){
         head = NULL;
-        tail = NULL;
+        tail = NULL;  
         }
      ~LinkedList() {
         if (head != NULL) {
