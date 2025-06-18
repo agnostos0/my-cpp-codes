@@ -6,9 +6,7 @@ class Queue{
 
     stack<int> s2;
     public:
-    Queue(){
-        
-    }
+    
     void push(int x){
         if(s1.empty()){
         s1.push(x);}
