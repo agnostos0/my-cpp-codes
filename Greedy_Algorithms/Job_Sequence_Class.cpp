@@ -49,15 +49,3 @@ int main(){
     maxprofit(job);
    
 }
-/*
-✅ push_back()
-jobs.push_back(Job(i, d, p));
--You construct the object first, then push it into the vector.
--This creates a temporary Job object, and then copies or moves it into the vector.
-✅ emplace_back()
-jobs.emplace_back(i, d, p);
--Constructs the Job in-place directly inside the vector's memory.
--No temporary object is created.
--Faster and more efficient in many cases (especially for complex objects).
-
-*/
