@@ -23,16 +23,15 @@ Node* buildtree(vector<int> data){
  currnod->right = buildtree(data);
  return currnod;
 }
-void printinorder(Node* root){
+void printinorder(Node* root){//preorder traversel root->right part->left part//
     if(root==NULL){
         return;
     }
       cout<<root->data;
-    
+    cout<<"->";
     printinorder(root->left);
 
     printinorder(root->right);
-    cout<<"->";
   
 }
 int main(){
