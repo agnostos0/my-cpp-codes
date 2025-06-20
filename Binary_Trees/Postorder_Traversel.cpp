@@ -31,8 +31,8 @@ void printinorder(Node* root){
     
     printinorder(root->right);//right
     cout<<root->data;//root
-  
-}//left sub tree ->right sub tree->root/
+  //timecomplexit and spacecomplexity = O(n)
+}//left sub tree ->right sub tree->root
 int main(){
     vector<int> data = {1,2,3,-1,-1,4,-1,2,-1,-1,10,30,-1,-1,40,-1,-1};
     Node* root = buildtree(data);

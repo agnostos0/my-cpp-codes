@@ -30,19 +30,28 @@ void levelordertraversel(Node* root){
     }
     queue<Node*> q;
     q.push(root);
+    q.push(NULL);
     while(!q.empty()){
         Node* currnod = q.front();
         q.pop();
-        cout<<currnod->data;
+     if(currnod==NULL){
+            cout<<endl;
+            if(q.empty()){
+                break;
+            }
+         q.push(NULL);
+        }
+        else{
+        cout<<currnod->data<<". ";
         if(currnod->left != NULL)
-{
-    q.push(currnod->left);
+      { 
+         q.push(currnod->left);
 
-}
-if(currnod->right)
-{
-    q.push(currnod->right);
-} 
+          }
+              if(currnod->right)
+          {
+           q.push(currnod->right);
+        } }
 }
 }
 int main(){
@@ -51,3 +60,4 @@ int main(){
     levelordertraversel(root);
     return 0;
 }
+//timecomplexit and spacecomplexity = O(n)

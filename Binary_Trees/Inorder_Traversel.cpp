@@ -32,6 +32,7 @@ void printinorder(Node* root){
     printinorder(root->right);//right
   
 }//left sub tree ->root<- right sub tree//
+//timecomplexit and spacecomplexity = O(n)
 int main(){
     vector<int> data = {1,2,3,-1,-1,4,-1,2,-1,-1,10,30,-1,-1,40,-1,-1};
     Node* root = buildtree(data);
