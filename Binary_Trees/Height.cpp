@@ -29,8 +29,6 @@ Node* buildtree(const vector<int>& data) {
     return curr;
 }
 
-// Preorder traversal: root → left → right
-// Tracks depth at leaf node ends
 void height(Node* root, vector<int>& heights) {
     if (root == NULL) {
         heights.push_back(::depth);  // Push depth when hitting NULL
