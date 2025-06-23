@@ -48,7 +48,9 @@ void levelordertraversel(Node* root){
          q.push(currnod->left);
 
           }
-              if(currnod->right!= NULL)
+
+
+          if(currnod->right!= NULL)
           {
            q.push(currnod->right);
         } }
