@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<map>
 #include<queue>
 using namespace std;
 class Node{
@@ -24,40 +25,41 @@ Node* buildtree(vector<int> data){
  currnod->right = buildtree(data);
  return currnod;
 }
-void levelordertraversel(Node* root){
+void topview(Node* root){
     if(root==NULL){
         return;
     }
-    queue<Node*> q;
-    q.push(root);
-    q.push(NULL);
+    queue<pair<Node*,int>> q;//(node,horizontal distance)
+    q.push(make_pair(root,0));
+    map<int,int> m;
     while(!q.empty()){
-        Node* currnod = q.front();
+        Node* currnod = q.front().first;
+        int h = q.front().second;
         q.pop();
-     if(currnod==NULL){
-            cout<<endl;
-            if(q.empty()){
-                break;
-            }
-         q.push(NULL);
+        if(m.count(h)==0){
+            m[h] = currnod->data;
         }
-        else{
-        cout<<currnod->data<<". ";
         if(currnod->left != NULL)
-      { 
-         q.push(currnod->left);
+      {    
+
+         q.push(make_pair(currnod->left,h-1));
 
           }
               if(currnod->right!= NULL)
           {
-           q.push(currnod->right);
-        } }
+        q.push(make_pair(currnod->right,h+1));
+        } 
 }
+for(auto it:m){
+    cout<<it.second<<endl;
 }
+
+}
+
 int main(){
     vector<int> data = {1,2,3,-1,-1,4,-1,2,-1,-1,10,30,-1,-1,40,-1,-1};
     Node* root = buildtree(data);
-    levelordertraversel(root);
+    topview(root);
     return 0;
 }
 //timecomplexit and spacecomplexity = O(n)
