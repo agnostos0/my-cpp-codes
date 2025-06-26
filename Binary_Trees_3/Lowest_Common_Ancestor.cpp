@@ -59,3 +59,5 @@ int main(){
     cout<<lca(root,n1,n2)<<endl;
     return 0;
 }
+//time complexity O(n)  
+//space complexity O(n)
