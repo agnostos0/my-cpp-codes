@@ -42,5 +42,3 @@ int main(){
     Node* root = buildtree(data);
 
 }
-//time complexity O(n)  
-//space complexity O(1)
