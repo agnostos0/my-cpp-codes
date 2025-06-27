@@ -23,28 +23,26 @@ Node* buildtree(vector<int> data){
  currnod->right = buildtree(data);
  return currnod;
 }
+int kthancestor(Node* root,int k,int n){
+    if(root==NULL){
+        return -1;
+    }
+    if(root->data == n){
+        return 0;
+    }
+    int left = kthancestor(root->left,k,n);
+    int right = kthancestor(root->right,k,n);
+     int vaild = left == -1 ? right : left;
+     if(vaild == k){
+     cout<<root->data;
+     }
+    return vaild+1;
 
-Node* lca(Node* root,int n1,int n2){
-    if(root == NULL){
-        return NULL;
-    }
-    if(root->data == n1 || root->data == n2){
-        return root;
-    }
-    Node* left = lca(root->left,n1,n2);
-    Node* right = lca(root->right,n1,n2);
-    if(left && right){
-        return root;
-    }
-    return left!=NULL?left:right;
 }
 int main(){
     vector<int> data = {1,2,3,-1,-1,4,-1,-1,5,6,-1,-1,9,-1,-1};
     Node* root = buildtree(data);
-    int n1 = 3;
-    int n2 = 4;
-    Node* ans= lca(root,n1,n2);
-    cout<<ans->data;
+    kthancestor(root,2,9);
     return 0;
 }
 //time complexity O(n)  
