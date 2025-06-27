@@ -23,29 +23,24 @@ Node* buildtree(vector<int> data){
  currnod->right = buildtree(data);
  return currnod;
 }
+int transform(Node* root){
+    if(root==NULL){
+        return 0;
+    }
+    int left = transform(root->left);
+    int right = transform(root->right);
+    int currold = root->data;
+    root->data = left + right + root->left->data + root->right->data;
+    return currold;
+   
 
-Node* lca(Node* root,int n1,int n2){
-    if(root == NULL){
-        return NULL;
-    }
-    if(root->data == n1 || root->data == n2){
-        return root;
-    }
-    Node* left = lca(root->left,n1,n2);
-    Node* right = lca(root->right,n1,n2);
-    if(left && right){
-        return root;
-    }
-    return left!=NULL?left:right;
+
+
 }
 int main(){
     vector<int> data = {1,2,3,-1,-1,4,-1,-1,5,6,-1,-1,9,-1,-1};
     Node* root = buildtree(data);
-    int n1 = 3;
-    int n2 = 4;
-    Node* ans= lca(root,n1,n2);
-    cout<<ans->data;
-    return 0;
+
 }
 //time complexity O(n)  
 //space complexity O(1)
