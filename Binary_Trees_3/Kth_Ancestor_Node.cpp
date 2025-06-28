@@ -33,9 +33,12 @@ int kthancestor(Node* root,int k,int n){
     int left = kthancestor(root->left,k,n);
     int right = kthancestor(root->right,k,n);
      int vaild = left == -1 ? right : left;
-     if(vaild == k){
-     cout<<root->data;
+     if(left == -1 && right == -1){
+        return -1;
      }
+     if(vaild +1  == k){
+     cout<<root->data;
+     } 
     return vaild+1;
 
 }
