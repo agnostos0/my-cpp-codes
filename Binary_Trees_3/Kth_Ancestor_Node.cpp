@@ -39,7 +39,8 @@ int kthancestor(Node* root,int k,int n){
      if(vaild +1  == k){
      cout<<root->data;
      } 
-    return vaild+1;
+    return vaild+1;  
+    
 
 }
 int main(){
