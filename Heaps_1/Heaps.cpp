@@ -22,11 +22,11 @@ class Heap{
      int left = 2*i + 1;
      int right = 2*i + 2;
      int maxid= i;
-     if(left>vec.size() && vec[left]> vec[maxid])
+     if(left<vec.size() && vec[left]> vec[maxid])
 {
     maxid = left;
 }   
-         if(right>vec.size() && vec[right]> vec[maxid])
+         if(right<vec.size() && vec[right]> vec[maxid])
 {
     maxid = right;
 } 
