@@ -65,7 +65,7 @@ class HashTable{
         currsize++;
         if(table[idx] == NULL){
             table[idx] = new Node(value,key);
-           
+         
     }
     else{
         Node* temp = table[idx];
@@ -74,10 +74,45 @@ class HashTable{
 
         
     }
- double lamda = currsize /(double)totalsize;
+       double lamda = currsize /(double)totalsize;
             if(lamda > 1){//O(n)
                 rehash();
             } 
-}
 
+}
+bool exist(string key)
+{ 
+  int idx = Hashing(key);
+  Node* temp = table[idx];
+  while(temp != NULL){
+    if(temp->key == key){
+        return true;
+  }
+  temp = temp->next;
+}
+return false;
+}
+int searcH(string key)
+{ 
+  int idx = Hashing(key);
+  Node* temp = table[idx];
+  while(temp != NULL){
+    if(temp->key == key){//Found
+        return temp->value; 
+  }
+  temp = temp->next;
+}
+return -1;
+}
 };
+int main(){
+    HashTable h(3);
+    h.insert(10,"INDIA");
+    h.insert(20,"USA");
+    h.insert(30,"CHINA");
+    if(h.exist("INDIA")){
+        cout<<"INDIA exists"<<endl;
+        cout<<"Value fot key INDIA is "<<h.searcH("INDIA");
+    }
+    
+}
