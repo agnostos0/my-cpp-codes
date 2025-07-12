@@ -15,13 +15,7 @@ class Node{
         next = NULL;
     }
 };
-int Hashing(string key){
-    int idx =0 ;
-    for(int i=0;i<key.length();i++){
-        idx = idx + (key[i]*key[i])%key.length();
-    }
-    return idx;
-}
+
 class HashTable{
     public:
     int totalsize;
@@ -36,6 +30,13 @@ class HashTable{
             table[i] = NULL;
         }
     }
+    int Hashing(string key){
+    int idx =0 ;
+    for(int i=0;i<key.length();i++){
+        idx = idx + (key[i]*key[i])%key.length();
+    }
+    return idx%totalsize;
+}
     void insert(int value,string key){//O(1) for worst case O(n) becasue of rehashing
         int idx = Hashing(key);
         currsize++;

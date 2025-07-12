@@ -105,12 +105,23 @@ int searcH(string key)
 }
 return -1;
 }
+void print(){
+    for(int i = 0;i<totalsize;i++){
+        Node* temp = table[i];
+        while (temp != NULL)
+        {   cout<<"Value"<<"      "<<"Key"<<endl;
+            cout<<temp->value<<" - > "<<temp->key<<endl;
+            temp=temp->next;
+        }
+    }   
+    }
 };
 int main(){
     HashTable h(3);
     h.insert(10,"INDIA");
     h.insert(20,"USA");
     h.insert(30,"CHINA");
+    h.print();
     if(h.exist("INDIA")){
         cout<<"INDIA exists"<<endl;
         cout<<"Value fot key INDIA is "<<h.searcH("INDIA")<<endl;
