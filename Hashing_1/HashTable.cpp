@@ -29,14 +29,14 @@ class HashTable{
     Node** table;
     HashTable(int size){
         currsize = 0;
-        
+
         totalsize = size;
         table = new Node*[totalsize];
         for(int i = 0;i<totalsize;i++){
             table[i] = NULL;
         }
     }
-    void insert(int value,string key){
+    void insert(int value,string key){//O(1) for worst case O(n) becasue of rehashing
         int idx = Hashing(key);
         currsize++;
         if(table[idx] == NULL){
