@@ -21,6 +21,7 @@ class Trie{
     
     Trie(){
         root=new Node();
+        root->freq = -1;
     }
     void insert(string key)
     { Node* temp = root;
