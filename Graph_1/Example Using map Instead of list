@@ -1,0 +1,15 @@
+class Graph {
+public:
+    int V;
+    vector<map<int, int>> adj;  // vector of maps
+
+    Graph(int V) {
+        this->V = V;
+        adj.resize(V);
+    }
+
+    void addEdge(int u, int v, int w) {
+        adj[u][v] = w; // store weight of edge u->v
+        adj[v][u] = w; // undirected
+    }
+};
