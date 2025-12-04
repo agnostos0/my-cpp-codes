@@ -32,7 +32,7 @@ public:
             }
         }
 
-        // Push AFTER all neighbors processed
+        // Push AFTER all.   neighbors processed
         st.push(node);
     }
 
